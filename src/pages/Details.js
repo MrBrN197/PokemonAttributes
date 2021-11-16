@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import styles from './Details.module.scss';
 
 const Details = () => {
   const { name } = useParams();
@@ -23,32 +24,34 @@ const Details = () => {
   if (details.loading) return <h3>Loading...</h3>;
 
   return (
-    <div>
+    <div className={styles.container}>
       <img src={details.data.sprites.front_default} alt={name} />
-      <p>
-        Weight:
-        {' '}
-        {details.data.weight}
-      </p>
-      <p>
-        Experience:
-        {' '}
-        {details.data.base_experience}
-      </p>
-      <ul>
+      <ul className={styles.types}>
+        {details.data.types.map((type) => (
+          <li key={type.slot}>
+            <span>{type.type.name}</span>
+          </li>
+        ))}
+      </ul>
+      <div className={styles.attrs}>
+        <p>
+          Weight:
+          {' '}
+          {details.data.weight}
+        </p>
+        <p>
+          Experience:
+          {' '}
+          {details.data.base_experience}
+        </p>
+      </div>
+      <ul className={styles.stats}>
         {details.data.stats.map((stat) => (
           <li key={stat.stat.name}>
             {stat.stat.name}
             :
             {' '}
             {stat.base_stat}
-          </li>
-        ))}
-      </ul>
-      <ul>
-        {details.data.types.map((type) => (
-          <li key={type.slot}>
-            <span>{type.type.name}</span>
           </li>
         ))}
       </ul>
