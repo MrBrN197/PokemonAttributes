@@ -20,7 +20,7 @@ const Homepage = () => {
   return (
     <div className={styles.container}>
       {pokemons.map((data) => (
-        <Link to={`details/${data.name}`}>
+        <Link to={`pokemon/${data.name}`}>
           <Pokemon data={data}/>
         </Link>
       ))}

@@ -7,7 +7,7 @@ const App = () => (
     <Route path="/" exact>
       <Homepage />
     </Route>
-    <Route path="/details">
+    <Route path="/pokemon/:name">
       <Details />
     </Route>
   </Switch>
