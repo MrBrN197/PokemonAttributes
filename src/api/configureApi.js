@@ -1,5 +1,5 @@
-import { getTrackDetails } from './spotify';
+import { getPokemonDetails } from './pokeapi';
 
 export default {
-  getTrackDetails,
+  getPokemonDetails,
 };
