@@ -2,13 +2,14 @@
 
 import { useEffect, useState } from 'react';
 import Pokemon from './components/Pokemon';
+import styles from './Homepage.module.css';
 
 const Homepage = () => {
   const [pokemons, setPokemons] = useState([]);
 
   useEffect(() => {
     const getPokemon = async () => {
-      const resp = await fetch('https://pokeapi.co/api/v2/pokemon?limit=30');
+      const resp = await fetch('https://pokeapi.co/api/v2/pokemon?limit=36');
       const data = await resp.json();
       setPokemons(data.results);
     };
@@ -16,7 +17,7 @@ const Homepage = () => {
   }, []);
 
   return (
-    <div>
+    <div className={styles.container}>
       {pokemons.map((data) => (
         <Pokemon data={data}/>
       ))}

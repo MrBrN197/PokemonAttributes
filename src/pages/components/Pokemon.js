@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import styles from './Pokemon.module.css';
 
 const Pokemon = ({
   /* eslint-disable-next-line */
@@ -20,9 +21,9 @@ const Pokemon = ({
   }, [url]);
 
   return (
-    <>
+    <div className={styles.pokemon}>
       {image && <img src={image} alt="" />}
-    </>
+    </div>
   );
 };
 
