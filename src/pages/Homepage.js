@@ -1,7 +1,6 @@
 /* eslint-disable */
-
 import { useEffect, useState } from 'react';
-import Pokemon from './components/Pokemon';
+import Pokemon from '../components/Pokemon';
 import styles from './Homepage.module.css';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';

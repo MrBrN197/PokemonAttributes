@@ -14,7 +14,6 @@ const Pokemon = ({
     const fetchPokemonDetails = async () => {
       const resp = await fetch(url);
       const respData = await resp.json();
-      // console.log(respData.sprites.front_default);
       setImage(respData.sprites.front_default);
     };
     fetchPokemonDetails();
