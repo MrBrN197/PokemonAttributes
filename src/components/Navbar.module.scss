@@ -1,5 +1,41 @@
 
+@use '../variables' as *;
+
 .header {
-  height: 5rem;
+
+  $font-color: $bg-purple;
+  $bg: rgb(219, 192, 247);
+
+  background-color: $bg;
+  height: 3rem;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  color: $font-color;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  h1 {
+    padding-right: 1em;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-family: Lato, sans-serif;
+    position: relative;
+    line-height: 1.8;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      left: -1em;
+      width: 2px;
+      height: 100%;
+      background-color: $font-color;
+    }
+  }
+
+  .back {
+    height: 2rem;
+    width: 2rem;
+    cursor: pointer;
+  }
 }
