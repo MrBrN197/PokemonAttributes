@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { RiLoader4Line } from 'react-icons/ri';
+import { CgSpinner } from 'react-icons/cg';
 import styles from './Loader.module.scss';
 
 const Loading = ({
@@ -9,7 +9,7 @@ const Loading = ({
 }) => (
   <div className={className}>
     <div className={styles.loaderParent}>
-      {loading && <div className={styles.loader}><RiLoader4Line size="100%" /></div>}
+      {loading && <div className={styles.loader}><CgSpinner size="100%" /></div>}
       {children}
     </div>
   </div>
