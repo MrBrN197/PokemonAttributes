@@ -11,6 +11,10 @@ body {
   color: whitesmoke;
 }
 
+a {
+  color: inherit;
+}
+
 ul {
   list-style-type: none;
 }
