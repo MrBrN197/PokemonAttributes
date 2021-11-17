@@ -7,28 +7,24 @@ const Pokemon = ({
   data,
 }) => {
   /* eslint-disable-next-line */
-  const { url } = data;
+  const { url, name } = data;
 
+  const [loaded, setLoaded] = useState(false);
   const [image, setImage] = useState(null);
 
   useEffect(() => {
     const fetchPokemonDetails = async () => {
       const resp = await fetch(url);
       const respData = await resp.json();
-      await new Promise((resolve) => {
-        const img = new Image();
-        img.onload = resolve;
-        img.src = respData.sprites.front_default;
-      });
       setImage(respData.sprites.front_default);
     };
     fetchPokemonDetails();
   }, [url]);
 
   return (
-    <Loading className={styles.pokemon} loading={!image}>
+    <Loading className={styles.pokemon} loading={!loaded}>
       <div>
-        {image && <img src={image} alt="" />}
+        {image && <img src={image} onLoad={() => setLoaded(true)} alt={name} />}
       </div>
     </Loading>
   );
