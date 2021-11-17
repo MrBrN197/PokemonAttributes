@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import styles from './Pokemon.module.css';
+import styles from './Pokemon.module.scss';
 
 const Pokemon = ({
   /* eslint-disable-next-line */

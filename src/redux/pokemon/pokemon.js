@@ -10,7 +10,7 @@ const reducer = (state = [], action) => {
 };
 
 export const getPokemons = () => async (dispatch) => {
-  const resp = await fetch('https://pokeapi.co/api/v2/pokemon?limit=36');
+  const resp = await fetch('https://pokeapi.co/api/v2/pokemon?limit=100');
   const data = await resp.json();
   dispatch({
     type: GET_POKEMONS,
