@@ -7,7 +7,7 @@
   $bg: rgb(219, 192, 247);
 
   background-color: $bg;
-  height: 3rem;
+  min-height: 3rem;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
   color: $font-color;
   display: flex;
@@ -25,9 +25,21 @@
   }
 
   .back {
-    height: 2rem;
-    width: 2rem;
+    height: 2.4rem;
+    width: 2.4rem;
     cursor: pointer;
+    border-radius: 1rem;
+    padding: 0.4rem;
+    box-sizing: border-box;
+    transition: background-color 120ms;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    &:active {
+      background-color: rgba(255, 255, 255, 0.5);
+    }
   }
 
   .settings {
