@@ -28,9 +28,7 @@ const Homepage = () => {
       </div>
       <div className={styles.container}>
         {pokemons.map((data) => (
-          <Link key={data.name} to={`pokemon/${data.name}`}>
-            <Pokemon data={data} />
-          </Link>
+          <Pokemon key={data.name} data={data} />
         ))}
       </div>
     </>
