@@ -7,3 +7,21 @@
   gap: 1.6rem;
   padding-block: 2rem;
 }
+
+.searchBox {
+  padding-inline: 2rem;
+  margin-top: 0.4rem;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+
+  svg {
+    margin-inline: 1rem;
+  }
+}
+
+// .searchBox.error {
+//   $red: red;
+
+//   background-color: rgba($red, 0.6);
+// }

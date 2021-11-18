@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { FiSearch } from 'react-icons/fi';
 import Pokemon from '../components/Pokemon';
 import styles from './Homepage.module.scss';
 
@@ -21,7 +22,10 @@ const Homepage = () => {
 
   return (
     <>
-      <input onChange={handleSearch} type="text" value={searchValue} />
+      <div className={styles.searchBox}>
+        <FiSearch />
+        <input onChange={handleSearch} type="text" value={searchValue} />
+      </div>
       <div className={styles.container}>
         {pokemons.map((data) => (
           <Link key={data.name} to={`pokemon/${data.name}`}>
