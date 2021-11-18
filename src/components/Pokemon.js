@@ -9,7 +9,7 @@ const Pokemon = ({
   /* eslint-disable-next-line */
   const { url, name } = data;
 
-  const [loaded, setLoaded] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
   const [image, setImage] = useState(null);
 
   useEffect(() => {
@@ -22,11 +22,15 @@ const Pokemon = ({
   }, [url]);
 
   return (
-    <Loading className={styles.pokemon} loading={!loaded}>
-      <div>
-        {image && <img src={image} onLoad={() => setLoaded(true)} alt={name} />}
-      </div>
-    </Loading>
+    <Loading
+      className={styles.pokemon}
+      loading={!imageLoaded}
+      render={() => (
+        <>
+          {image && <img src={image} alt={name} onLoad={() => setImageLoaded(true)} />}
+        </>
+      )}
+    />
   );
 };
 
