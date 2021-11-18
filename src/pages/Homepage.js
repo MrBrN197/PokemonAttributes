@@ -26,10 +26,13 @@ const Homepage = () => {
         <FiSearch />
         <input onChange={handleSearch} type="text" value={searchValue} />
       </div>
-      <div className={styles.container}>
-        {pokemons.map((data) => (
-          <Pokemon key={data.name} data={data} />
-        ))}
+      <div>
+        <h3 className={styles.heading}>Pokemon A-Z</h3>
+        <div className={styles.container}>
+          {pokemons.map((data) => (
+            <Pokemon key={data.name} data={data} />
+          ))}
+        </div>
       </div>
     </>
   );

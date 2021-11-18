@@ -4,8 +4,6 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin-block: 2rem auto;
-  border-radius: 0.6rem;
   overflow: hidden;
 
   > * {
@@ -13,9 +11,14 @@
   }
 }
 
+.heading {
+  background-color: darken($purple, 13%);
+  padding-inline: 0.5em;
+}
+
 .searchBox {
   padding-inline: 2rem;
-  margin-top: 0.4rem;
+  margin-block: 0.4rem;
   display: flex;
   align-items: center;
   font-size: 1rem;

@@ -4,10 +4,8 @@ import styles from './Pokemon.module.scss';
 import Loading from './Loader';
 
 const Pokemon = ({
-  /* eslint-disable-next-line */
   data,
 }) => {
-  /* eslint-disable-next-line */
   const { url, name } = data;
 
   const [imageLoaded, setImageLoaded] = useState(false);
