@@ -1,25 +1,16 @@
-.loaderParent {
-  position: relative;
-  width: 100%;
+.animation {
+  animation: rotation 1s infinite linear;
+  // background-color: yellowgreen;
+  width: fit-content;
   height: 100%;
+  margin: 0 auto;
 
-  > .loader {
-    // background-color: rgba(220, 20, 60, 0.7);
-    bottom: 0;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
+  svg {
+    display: block;
+  }
 
-    svg {
-      animation: rotation 1s infinite linear;
-      padding: 30%;
-      box-sizing: border-box;
-
-      @keyframes rotation {
-        0% { transform: rotate(0); }
-        100% { transform: rotate(360deg); }
-      }
-    }
+  @keyframes rotation {
+    0% { transform: rotate(0); }
+    100% { transform: rotate(360deg); }
   }
 }

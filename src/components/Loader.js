@@ -2,16 +2,29 @@
 import { CgSpinner } from 'react-icons/cg';
 import styles from './Loader.module.scss';
 
+const loadingStyle = {
+  position: 'relative',
+};
+
+const spinnerStyle = {
+  position: 'absolute',
+  inset: '0',
+};
+
 const Loading = ({
-  loading,
-  children,
   className,
+  render,
+  loading,
 }) => (
-  <div className={className}>
-    <div className={styles.loaderParent}>
-      {loading && <div className={styles.loader}><CgSpinner size="100%" /></div>}
-      {children}
+  <div className={className} style={loadingStyle}>
+    {loading && (
+    <div style={spinnerStyle}>
+      <div className={styles.animation}>
+        <CgSpinner size="100%" opacity={0.5} />
+      </div>
     </div>
+    )}
+    {render()}
   </div>
 );
 
