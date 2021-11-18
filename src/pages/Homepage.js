@@ -11,7 +11,7 @@ const Homepage = () => {
   const location = useLocation();
   const query = new URLSearchParams(location.search);
   const search = query.get('search') || '';
-  pokemons = pokemons.filter((p) => p.name.includes(search));
+  pokemons = pokemons.filter((p) => p.name.includes(search.toLowerCase()));
   const history = useHistory();
   const [searchValue, setSearchValue] = useState(search);
 
