@@ -1,5 +1,1 @@
-import { getPokemonDetails } from './pokeapi';
-
-export default {
-  getPokemonDetails,
-};
+export * as default from './pokeapi';

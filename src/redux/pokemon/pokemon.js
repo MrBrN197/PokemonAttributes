@@ -1,3 +1,5 @@
+import API from '../../api/configureApi';
+
 const GET_POKEMONS = 'pokemonBrowser/pokemon/GET_POKEMONS';
 
 const reducer = (state = [], action) => {
@@ -10,8 +12,7 @@ const reducer = (state = [], action) => {
 };
 
 export const getPokemons = () => async (dispatch) => {
-  const resp = await fetch('https://pokeapi.co/api/v2/pokemon?limit=40');
-  const data = await resp.json();
+  const data = await API.getPokemonList();
   dispatch({
     type: GET_POKEMONS,
     payload: data.results,

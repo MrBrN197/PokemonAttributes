@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import styles from './Details.module.scss';
 import Loading from '../components/Loader';
+import API from '../api/configureApi';
 
 const Details = () => {
   const { name } = useParams();
@@ -11,9 +12,7 @@ const Details = () => {
   useEffect(() => {
     const fetchPokemonDetails = async () => {
       try {
-        const resp = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
-        const respData = await resp.json();
-        await new Promise((resolve) => setTimeout(resolve, 2000));
+        const respData = await API.getPokemonByName(name);
         setDetails({ loading: false, data: respData });
       } catch {
         setDetails({ loading: false, error: true });
