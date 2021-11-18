@@ -24,7 +24,7 @@ const Homepage = () => {
     <>
       <div className={styles.searchBox}>
         <FiSearch />
-        <input onChange={handleSearch} type="text" value={searchValue} />
+        <input onChange={handleSearch} type="text" value={searchValue} placeholder="Search Pokemon" />
       </div>
       <div>
         <h3 className={styles.heading}>Pokemon A-Z</h3>
