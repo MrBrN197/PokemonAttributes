@@ -37,3 +37,7 @@ input {
   font-size: inherit;
   font-family: Lato, sans-serif;
 }
+
+::placeholder {
+  color: inherit;
+}
