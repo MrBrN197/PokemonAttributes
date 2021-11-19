@@ -5,7 +5,7 @@ import {
 import '@testing-library/jest-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { getPokemonList, getPokemonDetails } from '../api/pokeapi';
+import { getPokemonList, getPokemonDetails, getPokemonByName } from '../api/pokeapi';
 import Pokemon from '../components/Pokemon';
 import Homepage from '../pages/Homepage';
 import store from '../redux/configureStore';
@@ -37,8 +37,7 @@ describe('Components Testing', () => {
   beforeEach(() => {
     getPokemonList.mockResolvedValue(apiMockPokemonList);
     getPokemonDetails.mockResolvedValue(apiMockPokemonDetail);
-    // getPokemonByName = jest.requireActual('./api/pokeapi').getPokemonByName;
-    // initialize redux store with pokemons
+    getPokemonByName.mockImplementation(jest.requireActual('./api/pokeapi').getPokemonByName);
     store.dispatch(getPokemons());
   });
 

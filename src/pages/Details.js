@@ -22,7 +22,6 @@ const Details = () => {
   }, [name]);
 
   if (details.error) return <h3 style={{ color: 'black' }}>Pokemon Not Found</h3>;
-  // if (details.loading) return <h3 style={{ color: 'black' }}>Loading...</h3>;
 
   return (
     <div className={styles.container}>
