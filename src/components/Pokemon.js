@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import styles from './Pokemon.module.scss';
 import Loading from './Loader';
 import { getPokemonDetails } from '../api/pokeapi';
@@ -36,6 +37,13 @@ const Pokemon = ({
       />
     </Link>
   );
+};
+
+Pokemon.propTypes = {
+  data: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default Pokemon;

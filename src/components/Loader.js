@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import { CgSpinner } from 'react-icons/cg';
+import PropTypes from 'prop-types';
 import styles from './Loader.module.scss';
 
 const loadingStyle = {
@@ -27,5 +27,11 @@ const Loading = ({
     {render()}
   </div>
 );
+
+Loading.propTypes = {
+  className: PropTypes.string.isRequired,
+  render: PropTypes.func.isRequired,
+  loading: PropTypes.bool.isRequired,
+};
 
 export default Loading;
