@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Pokemon.module.scss';
 import Loading from './Loader';
-import API from '../api/configureApi';
+import { getPokemonDetails } from '../api/pokeapi';
 
 const Pokemon = ({
   data,
@@ -14,7 +14,7 @@ const Pokemon = ({
 
   useEffect(() => {
     const fetchPokemonDetails = async () => {
-      const respData = await API.getPokemonDetails(url);
+      const respData = await getPokemonDetails(url);
       setImage(respData.sprites.front_default);
     };
     fetchPokemonDetails();

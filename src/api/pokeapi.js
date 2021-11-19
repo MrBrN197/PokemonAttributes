@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 export const getPokemonDetails = async (url) => {
   const resp = await fetch(url);
   const data = resp.json();

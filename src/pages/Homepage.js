@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link, useHistory, useLocation } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { FiSearch } from 'react-icons/fi';
 import Pokemon from '../components/Pokemon';

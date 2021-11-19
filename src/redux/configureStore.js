@@ -7,5 +7,4 @@ const reducer = combineReducers({
 });
 
 const store = createStore(reducer, applyMiddleware(thunk));
-store.dispatch(getPokemons());
 export default store;

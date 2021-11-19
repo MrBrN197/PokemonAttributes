@@ -1,6 +1,6 @@
-import API from '../../api/configureApi';
+import { getPokemonList } from '../../api/pokeapi';
 
-const GET_POKEMONS = 'pokemonBrowser/pokemon/GET_POKEMONS';
+export const GET_POKEMONS = 'pokemonBrowser/pokemon/GET_POKEMONS';
 
 const reducer = (state = [], action) => {
   switch (action.type) {
@@ -12,10 +12,10 @@ const reducer = (state = [], action) => {
 };
 
 export const getPokemons = () => async (dispatch) => {
-  const data = await API.getPokemonList();
+  const data = await getPokemonList();
   dispatch({
     type: GET_POKEMONS,
-    payload: data.results,
+    payload: data?.results || [],
   });
 };
 
