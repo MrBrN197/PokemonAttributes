@@ -2,6 +2,7 @@ import { Switch, Route } from 'react-router-dom';
 import Homepage from './pages/Homepage';
 import Details from './pages/Details';
 import Navbar from './components/Navbar';
+import PageNotFound from './pages/PageNotFound';
 
 const App = () => (
   <>
@@ -12,6 +13,9 @@ const App = () => (
       </Route>
       <Route path="/pokemon/:name">
         <Details />
+      </Route>
+      <Route>
+        <PageNotFound />
       </Route>
     </Switch>
   </>

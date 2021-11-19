@@ -37,7 +37,7 @@ describe('Components Testing', () => {
   beforeEach(() => {
     getPokemonList.mockResolvedValue(apiMockPokemonList);
     getPokemonDetails.mockResolvedValue(apiMockPokemonDetail);
-    getPokemonByName.mockImplementation(jest.requireActual('./api/pokeapi').getPokemonByName);
+    getPokemonByName.mockImplementation(jest.requireActual('../api/pokeapi').getPokemonByName);
     store.dispatch(getPokemons());
   });
 
