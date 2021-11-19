@@ -18,7 +18,7 @@ A SPA web Application that displays attributes about different types of Pokemon.
 
 <!-- ## [Live Demo - GH pages]() -->
 <!-- ## [Live Demo - Netlify]() -->
-## 🔗 [Live Demo - Heroku](https://poke-stats.herokuapp.com/pokemon/bulbasaur)
+## 🔗 [Live Demo - Heroku](https://poke-stats.herokuapp.com/)
 
 ## 📦 Built With
 
