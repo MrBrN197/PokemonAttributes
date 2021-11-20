@@ -1,11 +1,15 @@
 import { IoIosArrowBack, IoIosSettings } from 'react-icons/io';
 
-import { Link, useRouteMatch } from 'react-router-dom';
+import { Link, useMatch } from 'react-router-dom';
 
 import styles from './Navbar.module.scss';
 
 const Navbar = () => {
-  const match = useRouteMatch('/pokemon');
+  const match = useMatch({
+    path: '/pokemon',
+    end: false,
+  });
+  console.log('match:', match);
 
   return (
     <header className={styles.header}>

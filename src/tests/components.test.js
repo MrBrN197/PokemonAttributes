@@ -3,13 +3,12 @@ import {
   render, screen, act, waitFor,
 } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import { Provider } from 'react-redux';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { getPokemonList, getPokemonDetails, getPokemonByName } from '../api/pokeapi';
 import Pokemon from '../components/Pokemon';
 import Homepage from '../pages/Homepage';
-import store from '../redux/configureStore';
 import { getPokemons } from '../redux/pokemon/pokemon';
+import Wrapper from './wrapper';
+import store from '../redux/configureStore';
 
 jest.mock('../api/pokeapi');
 
@@ -43,28 +42,18 @@ describe('Components Testing', () => {
 
   it('Test <Pokemon /> should render a pokemon\'s data correctly', async () => {
     await act(async () => render(
-      <Router>
-        <Switch>
-          <Route path="/">
-            <Pokemon data={{ name: 'pikachu', url: undefined }} />
-          </Route>
-        </Switch>
-      </Router>,
+      <Pokemon data={{ name: 'pikachu', url: undefined }} />,
+      { wrapper: Wrapper },
     ));
     await waitFor(() => expect(screen.getByText('Pikachu')).toBeInTheDocument());
   });
 
   it('Test <Homepage /> should render all fetched Pokemons correctly', async () => {
     render(
-      <Provider store={store}>
-        <Router>
-          <Switch>
-            <Route path="/">
-              <Homepage />
-            </Route>
-          </Switch>
-        </Router>
-      </Provider>,
+      <Homepage />,
+      {
+        wrapper: Wrapper,
+      },
     );
     await waitFor(() => expect(screen.getByText('Pikachu')).toBeInTheDocument());
     await waitFor(() => expect(screen.getByText('Bulbasaur')).toBeInTheDocument());

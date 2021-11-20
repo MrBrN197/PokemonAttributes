@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useHistory, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { FiSearch } from 'react-icons/fi';
 import Pokemon from '../components/Pokemon';
@@ -12,11 +12,11 @@ const Homepage = () => {
   const query = new URLSearchParams(location.search);
   const search = query.get('search') || '';
   pokemons = pokemons.filter((p) => p.name.includes(search.toLowerCase()));
-  const history = useHistory();
+  const navigate = useNavigate();
   const [searchValue, setSearchValue] = useState(search);
 
   const handleSearch = (e) => {
-    history.push(e.target.value ? `?search=${e.target.value}` : '');
+    navigate(e.target.value ? `?search=${e.target.value}` : '');
     setSearchValue(e.target.value);
   };
 
