@@ -4,12 +4,13 @@ import {
 } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { getPokemonList, getPokemonDetails, getPokemonByName } from '../api/pokeapi';
+import store from '../redux/configureStore';
+import { getPokemons } from '../redux/pokemon/pokemon';
 import Pokemon from '../components/Pokemon';
 import Homepage from '../pages/Homepage';
-import { getPokemons } from '../redux/pokemon/pokemon';
 import Wrapper from './wrapper';
-import store from '../redux/configureStore';
 import NavBar from '../components/Navbar';
+import PageNotFound from '../pages/PageNotFound';
 
 jest.mock('../api/pokeapi');
 
@@ -67,5 +68,13 @@ describe('Components Testing', () => {
       { wrapper: Wrapper },
     );
     expect(screen.getByText('Pokemon metrics')).toBeInTheDocument();
+  });
+
+  test('test <PageNotFound /> renders correctly', () => {
+    render(
+      <PageNotFound />,
+      { wrapper: Wrapper },
+    );
+    expect(screen.getByText('This Page Doesn\'t exist')).toBeInTheDocument();
   });
 });
