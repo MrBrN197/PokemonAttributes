@@ -9,7 +9,6 @@ const Navbar = () => {
     path: '/pokemon',
     end: false,
   });
-  console.log('match:', match);
 
   return (
     <header className={styles.header}>
