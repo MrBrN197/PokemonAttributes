@@ -9,6 +9,7 @@ import Homepage from '../pages/Homepage';
 import { getPokemons } from '../redux/pokemon/pokemon';
 import Wrapper from './wrapper';
 import store from '../redux/configureStore';
+import NavBar from '../components/Navbar';
 
 jest.mock('../api/pokeapi');
 
@@ -58,5 +59,13 @@ describe('Components Testing', () => {
     await waitFor(() => expect(screen.getByText('Pikachu')).toBeInTheDocument());
     await waitFor(() => expect(screen.getByText('Bulbasaur')).toBeInTheDocument());
     await waitFor(() => expect(screen.getByText('Raichu')).toBeInTheDocument());
+  });
+
+  test('test <NavBar /> renders correctly', () => {
+    render(
+      <NavBar />,
+      { wrapper: Wrapper },
+    );
+    expect(screen.getByText('Pokemon metrics')).toBeInTheDocument();
   });
 });
