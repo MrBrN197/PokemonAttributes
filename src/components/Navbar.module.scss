@@ -1,0 +1,50 @@
+
+@use '../variables' as *;
+
+.header {
+
+  $font-color: $bg-purple;
+  $bg: rgb(219, 192, 247);
+
+  background-color: $bg;
+  min-height: 3rem;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  color: $font-color;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 1rem;
+
+  h1 {
+    padding-right: 1em;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-family: Lato, sans-serif;
+    position: relative;
+    line-height: 1.8;
+  }
+
+  .back {
+    height: 2.4rem;
+    width: 2.4rem;
+    cursor: pointer;
+    border-radius: 1rem;
+    padding: 0.4rem;
+    box-sizing: border-box;
+    transition: background-color 120ms;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    &:active {
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+  }
+
+  .settings {
+    height: 1.5rem;
+    width: 1.5rem;
+    cursor: pointer;
+  }
+}

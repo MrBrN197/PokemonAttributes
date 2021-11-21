@@ -1,0 +1,16 @@
+.animation {
+  animation: rotation 1s infinite linear;
+  // background-color: yellowgreen;
+  width: fit-content;
+  height: 100%;
+  margin: 0 auto;
+
+  svg {
+    display: block;
+  }
+
+  @keyframes rotation {
+    0% { transform: rotate(0); }
+    100% { transform: rotate(360deg); }
+  }
+}

@@ -1,0 +1,46 @@
+
+@use '../variables' as *;
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0.4rem;
+  align-items: center;
+
+  @media screen and (max-width: 380px) {
+    flex-direction: column;
+  }
+
+  background-color: darken($purple, 8%);
+
+  &:nth-child(4n),
+  &:nth-child(4n + 1) {
+    background-color: darken($purple, 4%);
+  }
+
+  &:hover {
+    background-color: rgba(220, 20, 60, 0.6);
+  }
+
+  .pokemon {
+    box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 0.4rem;
+    flex-shrink: 0;
+    background-color: lighten($purple, 24%);
+
+    /* cursor: pointer; */
+    // padding: 0.2rem;
+    width: 6rem;
+    height: 6rem;
+    transition: transform 200ms;
+    color: $bg-purple;
+    display: flex;
+
+    &:hover {
+      transform: translateY(-2px);
+      background-color: $light-purple;
+      box-shadow: 0 0 15px 1px rgba($color: white, $alpha: 0.1);
+    }
+  }
+}
