@@ -10,7 +10,7 @@ const App = () => (
     <Routes>
       <Route path="/" exact element={<Homepage />} />
       <Route path="/pokemon/:name" element={<Details />} />
-      <Route element={<PageNotFound />} />
+      <Route path="*" element={<PageNotFound />} />
     </Routes>
   </>
 );
