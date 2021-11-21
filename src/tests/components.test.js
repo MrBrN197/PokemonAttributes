@@ -8,9 +8,10 @@ import store from '../redux/configureStore';
 import { getPokemons } from '../redux/pokemon/pokemon';
 import Pokemon from '../components/Pokemon';
 import Homepage from '../pages/Homepage';
-import Wrapper from './wrapper';
+import Wrapper, { renderWithRoute } from './wrapper';
 import NavBar from '../components/Navbar';
 import PageNotFound from '../pages/PageNotFound';
+import Details from '../pages/Details';
 
 jest.mock('../api/pokeapi');
 
@@ -18,12 +19,15 @@ const apiMockPokemonList = {
   results: [
     {
       name: 'Pikachu',
+      url: '',
     },
     {
       name: 'Bulbasaur',
+      url: '',
     },
     {
       name: 'Raichu',
+      url: '',
     },
   ],
 };
@@ -44,7 +48,7 @@ describe('Components Testing', () => {
 
   it('Test <Pokemon /> should render a pokemon\'s data correctly', async () => {
     await act(async () => render(
-      <Pokemon data={{ name: 'pikachu', url: undefined }} />,
+      <Pokemon data={{ name: 'pikachu', url: '' }} />,
       { wrapper: Wrapper },
     ));
     await waitFor(() => expect(screen.getByText('Pikachu')).toBeInTheDocument());
@@ -76,5 +80,12 @@ describe('Components Testing', () => {
       { wrapper: Wrapper },
     );
     expect(screen.getByText('This Page Doesn\'t exist')).toBeInTheDocument();
+  });
+
+  test('test <Details /> renders correctly ', () => {
+    renderWithRoute(<Details />, '/pokemon/:name', {
+      name: 'pikachu',
+    });
+    expect(screen.getByText('Pikachu')).toBeInTheDocument();
   });
 });
