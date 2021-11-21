@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 import {
-  MemoryRouter, BrowserRouter, Route, Routes,
+  BrowserRouter, Route, Routes,
 } from 'react-router-dom';
 import { render } from '@testing-library/react';
 import store from '../redux/configureStore';
